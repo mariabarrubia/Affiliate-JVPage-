@@ -17,7 +17,7 @@
             --light: #F9FAFB;
             --gray: #6B7280;
             --gray-light: #E5E7EB;
-            --section-padding: 80px 0;
+            --section-padding: 4rem 0;
         }
         
         * {
@@ -32,12 +32,14 @@
             color: var(--dark);
             background-color: var(--light);
             scroll-behavior: smooth;
+            font-size: 16px;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
+            width: 100%;
         }
         
         section {
@@ -45,21 +47,23 @@
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             text-align: center;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
         
         .section-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             color: var(--gray);
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.5rem;
+            line-height: 1.5;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -69,7 +73,7 @@
         }
         
         h2 {
-            font-size: 2rem;
+            font-size: 1.875rem;
         }
         
         h3 {
@@ -77,7 +81,8 @@
         }
         
         p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
         }
         
         a {
@@ -92,14 +97,17 @@
         
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 0.875rem 1.75rem;
             border-radius: 8px;
             font-weight: 700;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 44px;
+            min-height: 44px;
+            line-height: 1.2;
         }
         
         .btn-primary {
@@ -129,10 +137,11 @@
         .card {
             background: white;
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 2rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
         
         .card:hover {
@@ -142,46 +151,58 @@
         
         .grid {
             display: grid;
-            gap: 2.5rem;
+            gap: 2rem;
         }
         
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
         
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
         
         .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
         
         .metric-box {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             background: white;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border-left: 5px solid var(--primary);
+            flex: 1;
+            min-width: 180px;
+            margin: 0.5rem;
+        }
+        
+        .metrics-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
         }
         
         .metric-value {
-            font-size: 3rem;
+            font-size: 2.25rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
         
         .metric-label {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
         
         .badge {
             display: inline-block;
-            padding: 6px 15px;
+            padding: 0.4rem 0.875rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
@@ -205,7 +226,7 @@
         .testimonial {
             background: white;
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 2rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             position: relative;
             border-left: 5px solid var(--primary);
@@ -216,15 +237,16 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            font-size: 5rem;
+            font-size: 4rem;
             color: var(--primary);
             opacity: 0.1;
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         
         .testimonial-author {
@@ -234,20 +256,20 @@
         
         .testimonial-role {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             border-radius: 8px;
             overflow: hidden;
         }
         
         th, td {
-            padding: 15px 20px;
+            padding: 0.875rem 1rem;
             text-align: left;
             border-bottom: 1px solid var(--gray-light);
         }
@@ -256,6 +278,11 @@
             background-color: var(--primary);
             color: white;
             font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        td {
+            font-size: 0.9rem;
         }
         
         tr:nth-child(even) {
@@ -267,9 +294,9 @@
         }
         
         .faq-item {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--gray-light);
-            padding-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
         }
         
         .faq-question {
@@ -279,20 +306,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--primary);
         }
         
         .faq-answer {
-            padding: 1.5rem;
+            padding: 1.25rem;
             background-color: #f8fafc;
             border-radius: 8px;
             border-left: 4px solid var(--primary);
+            font-size: 0.95rem;
         }
         
         .hero {
             text-align: center;
-            padding: 100px 0;
+            padding: 4rem 0;
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
             position: relative;
@@ -311,33 +339,35 @@
         }
         
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+            line-height: 1.5;
         }
         
         .scroll-container {
             display: flex;
             overflow-x: auto;
-            gap: 25px;
-            padding: 25px 0;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
             scrollbar-width: thin;
             scrollbar-color: var(--primary) var(--gray-light);
+            -webkit-overflow-scrolling: touch;
         }
         
         .scroll-container::-webkit-scrollbar {
-            height: 8px;
+            height: 6px;
         }
         
         .scroll-container::-webkit-scrollbar-track {
@@ -351,17 +381,17 @@
         }
         
         .testimonial-card {
-            min-width: 350px;
+            min-width: 300px;
             flex: 0 0 auto;
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border-left: 5px solid var(--primary);
         }
         
         .video-card {
-            min-width: 320px;
+            min-width: 280px;
             flex: 0 0 auto;
             background: white;
             border-radius: 12px;
@@ -371,16 +401,21 @@
         
         .video-card iframe {
             width: 100%;
-            height: 200px;
+            height: 180px;
             border: none;
         }
         
         .video-card-content {
-            padding: 1.5rem;
+            padding: 1.25rem;
+        }
+        
+        .video-card-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .image-card {
-            min-width: 280px;
+            min-width: 240px;
             flex: 0 0 auto;
             border-radius: 12px;
             overflow: hidden;
@@ -389,25 +424,25 @@
         
         .image-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         
         .image-card-content {
-            padding: 1.5rem;
+            padding: 1.25rem;
             background: white;
         }
         
         .angle-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
         }
         
         .angle-card {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border-left: 5px solid var(--primary);
             transition: transform 0.3s ease;
@@ -420,34 +455,34 @@
         .proof-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         
         .proof-icon {
-            margin-right: 1.5rem;
+            margin-right: 1.25rem;
             color: var(--primary);
-            font-size: 2rem;
-            min-width: 40px;
+            font-size: 1.5rem;
+            min-width: 30px;
         }
         
         .stat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
         }
         
         .stat-box {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border-top: 5px solid var(--primary);
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 0.5rem;
@@ -455,43 +490,52 @@
         
         .stat-label {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
         
         .market-segment {
             display: flex;
             align-items: center;
-            padding: 1.5rem;
+            padding: 1.25rem;
             background: white;
             border-radius: 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--primary);
         }
         
         .segment-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary);
-            margin-right: 1.5rem;
-            min-width: 60px;
+            margin-right: 1.25rem;
+            min-width: 40px;
         }
         
         .tab-container {
             display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--gray-light);
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .tab-container::-webkit-scrollbar {
+            display: none;
         }
         
         .tab {
-            padding: 1rem 2rem;
+            padding: 0.875rem 1.25rem;
             cursor: pointer;
             font-weight: 600;
             color: var(--gray);
             border-bottom: 3px solid transparent;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .tab.active {
@@ -510,34 +554,38 @@
         .chart-container {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
         }
         
         .map-container {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            overflow: auto;
         }
         
         .city-marker {
             display: inline-block;
-            padding: 8px 15px;
+            padding: 0.5rem 0.875rem;
             background: var(--primary);
             color: white;
             border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9rem;
+            margin: 0.25rem;
+            font-size: 0.8rem;
             font-weight: 600;
         }
         
         .hook-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 1rem;
             border-left: 4px solid var(--accent);
@@ -546,60 +594,35 @@
         .hook-text {
             font-style: italic;
             color: var(--dark);
-        }
-        
-        .nav-container {
-            position: sticky;
-            top: 0;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-        
-        .nav-item {
-            margin: 0 1rem;
-            font-weight: 600;
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-item:hover {
-            color: var(--primary);
-            background: rgba(37, 99, 235, 0.05);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         .psychology-card {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-top: 5px solid var(--secondary);
         }
         
         .pain-point-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
         }
         
         .pain-point-table th {
             background: var(--primary);
             color: white;
-            padding: 1rem;
+            padding: 0.875rem;
             text-align: left;
         }
         
         .pain-point-table td {
-            padding: 1rem;
+            padding: 0.875rem;
             border-bottom: 1px solid var(--gray-light);
         }
         
@@ -608,13 +631,13 @@
         }
         
         .hooks-container {
-            max-height: 500px;
+            max-height: 400px;
             overflow-y: auto;
             padding-right: 10px;
         }
         
         .hooks-container::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         
         .hooks-container::-webkit-scrollbar-track {
@@ -627,48 +650,201 @@
             border-radius: 10px;
         }
         
+        ul {
+            margin-left: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 1024px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.25rem;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 1.875rem;
             }
             
             .angle-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .container {
+                padding: 0 1.25rem;
+            }
         }
         
         @media (max-width: 768px) {
+            :root {
+                --section-padding: 3rem 0;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+            
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.875rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.75rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
             }
             
             .grid-2, .grid-3, .grid-4 {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .nav {
-                flex-wrap: wrap;
+            .metric-value {
+                font-size: 1.875rem;
             }
             
-            .nav-item {
-                margin: 0.5rem;
+            .stat-number {
+                font-size: 1.75rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .testimonial-card, .angle-card {
+                min-width: 260px;
+                padding: 1.25rem;
+            }
+            
+            .video-card, .image-card {
+                min-width: 220px;
+            }
+            
+            .video-card iframe, .image-card img {
+                height: 160px;
+            }
+            
+            .metrics-container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .metric-box {
+                min-width: 100%;
+                margin: 0;
+            }
+            
+            .tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .pain-point-table {
+                font-size: 0.8rem;
+            }
+            
+            .proof-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .proof-icon {
+                margin-bottom: 0.75rem;
+                margin-right: 0;
+            }
+            
+            .market-segment {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .segment-number {
+                margin-bottom: 0.75rem;
+                margin-right: 0;
+            }
+            
+            .chart-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 2.5rem 0;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 1.625rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .card {
+                padding: 1.25rem;
+            }
+            
+            .btn {
+                padding: 0.75rem 1.5rem;
                 font-size: 0.9rem;
             }
             
             .metric-value {
-                font-size: 2.5rem;
+                font-size: 1.75rem;
             }
             
-            .stat-number {
-                font-size: 2rem;
+            .testimonial-card, .angle-card {
+                min-width: 220px;
+                padding: 1rem;
+            }
+            
+            .video-card, .image-card {
+                min-width: 200px;
+            }
+            
+            .video-card iframe, .image-card img {
+                height: 140px;
+            }
+            
+            .tab {
+                padding: 0.625rem 0.875rem;
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.625rem 0.75rem;
+            }
+            
+            .chart-container {
+                height: 300px;
+                padding: 1rem;
             }
         }
     </style>
@@ -679,7 +855,7 @@
         <div class="container">
             <h1 class="hero-title">US Immigration Navigator PRO: Your 81% Commission Opportunity in a $2.3 Billion "Fear Economy"</h1>
             <p class="hero-subtitle">Tap into the desperate needs of 53.3 million immigrants facing deportation fears, bureaucratic nightmares, and legal uncertainty with a proven solution that converts at unprecedented rates.</p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="metrics-container">
                 <div class="metric-box">
                     <div class="metric-value">81%</div>
                     <div class="metric-label">Commission Rate</div>
@@ -738,7 +914,7 @@
                 <div class="card">
                     <h3><i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 10px;"></i> The Fear Economy</h3>
                     <p>Immigrants live in a state of "chronic fear, instability, and trauma" where routine activities become sources of anxiety:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li>44% fear driving a car</li>
                         <li>38% are scared to go to work</li>
                         <li>32% worry about sending children to school</li>
@@ -751,7 +927,7 @@
                 <div class="card">
                     <h3><i class="fas fa-chart-line" style="color: var(--secondary); margin-right: 10px;"></i> Market Size & Demand</h3>
                     <p>With 53.3 million immigrants in the U.S., this is a massive underserved market:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li>11.3 million pending USCIS cases (record high)</li>
                         <li>1.9 million asylum cases backlogged</li>
                         <li>538,000 active DACA recipients needing renewals</li>
@@ -763,8 +939,8 @@
             </div>
             
             <div class="chart-container">
-                <h3 style="text-align: center; margin-bottom: 2rem;">Immigrant Family Worries (2024 Data)</h3>
-                <canvas id="worryChart" height="350"></canvas>
+                <h3 style="text-align: center; margin-bottom: 2rem;">Immigrant Family Worries (2025 Data)</h3>
+                <canvas id="worryChart"></canvas>
             </div>
             
             <div class="stat-grid">
@@ -805,7 +981,7 @@
                 <div class="psychology-card">
                     <h3><i class="fas fa-balance-scale" style="color: var(--primary); margin-right: 10px;"></i> The Paradox of Hope vs. Fear</h3>
                     <p>Immigrants live with a constant tension between:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li><strong>Hope:</strong> Unshakable belief in a better future, desire to "feel whole," and faith in American meritocracy</li>
                         <li><strong>Fear:</strong> Chronic anxiety about deportation, family separation, and bureaucratic uncertainty</li>
                     </ul>
@@ -816,48 +992,50 @@
             
             <div class="card">
                 <h3 style="text-align: center; margin-bottom: 2rem;">The Core Psychological Pain Points & Solutions</h3>
-                <table class="pain-point-table">
-                    <thead>
-                        <tr>
-                            <th>Pain Point</th>
-                            <th>Psychological Trigger</th>
-                            <th>Product Solution</th>
-                            <th>Resulting Benefit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bureaucratic Labyrinth</td>
-                            <td>Crushing sense of helplessness due to indefinite delays</td>
-                            <td>Simplifies complex forms with guided "smooth process"</td>
-                            <td>Reclaimed sense of control, reduced anxiety</td>
-                        </tr>
-                        <tr>
-                            <td>Scam Ecosystem</td>
-                            <td>Profound trust deficit and fear of bad information</td>
-                            <td>"No More Notario" pledge and explicit transparency</td>
-                            <td>Peace of mind and assurance of legitimate partnership</td>
-                        </tr>
-                        <tr>
-                            <td>Pervasive Anxiety & Trauma</td>
-                            <td>Chronic fear of deportation and family separation</td>
-                            <td>Clear guided path to urgent stability and permanent status</td>
-                            <td>A "lifeline" to a new life, counter to fear of being "unwanted"</td>
-                        </tr>
-                        <tr>
-                            <td>Digital Divide</td>
-                            <td>Inaccessibility of flawed government apps like CBP One</td>
-                            <td>Accessible, reliable alternative that doesn't require tech-savviness</td>
-                            <td>Equal access to information, end to being "shut out"</td>
-                        </tr>
-                        <tr>
-                            <td>Financial Squeeze</td>
-                            <td>Stress from rising government fees and expensive legal services</td>
-                            <td>Affordable alternative to costly legal representation</td>
-                            <td>Financial relief without sacrificing quality guidance</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto;">
+                    <table class="pain-point-table">
+                        <thead>
+                            <tr>
+                                <th>Pain Point</th>
+                                <th>Psychological Trigger</th>
+                                <th>Product Solution</th>
+                                <th>Resulting Benefit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bureaucratic Labyrinth</td>
+                                <td>Crushing sense of helplessness due to indefinite delays</td>
+                                <td>Simplifies complex forms with guided "smooth process"</td>
+                                <td>Reclaimed sense of control, reduced anxiety</td>
+                            </tr>
+                            <tr>
+                                <td>Scam Ecosystem</td>
+                                <td>Profound trust deficit and fear of bad information</td>
+                                <td>"No More Notario" pledge and explicit transparency</td>
+                                <td>Peace of mind and assurance of legitimate partnership</td>
+                            </tr>
+                            <tr>
+                                <td>Pervasive Anxiety & Trauma</td>
+                                <td>Chronic fear of deportation and family separation</td>
+                                <td>Clear guided path to urgent stability and permanent status</td>
+                                <td>A "lifeline" to a new life, counter to fear of being "unwanted"</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Divide</td>
+                                <td>Inaccessibility of flawed government apps like CBP One</td>
+                                <td>Accessible, reliable alternative that doesn't require tech-savviness</td>
+                                <td>Equal access to information, end to being "shut out"</td>
+                            </tr>
+                            <tr>
+                                <td>Financial Squeeze</td>
+                                <td>Stress from rising government fees and expensive legal services</td>
+                                <td>Affordable alternative to costly legal representation</td>
+                                <td>Financial relief without sacrificing quality guidance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             
             <div class="card">
@@ -871,7 +1049,7 @@
                 <h3 style="text-align: center; margin-bottom: 1.5rem;">The Trust Deficit & How to Overcome It</h3>
                 <p>The immigrant community has been exploited by "notario" scams and dishonest services, creating a profound trust deficit. Any new product is immediately viewed with suspicion.</p>
                 <p><strong>Trust-Building Strategies:</strong></p>
-                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <ul>
                     <li>Lead with the "No More Notario" pledge upfront</li>
                     <li>Use verifiable data from official sources like USCIS</li>
                     <li>Highlight any partnerships with established non-profits</li>
@@ -1022,11 +1200,11 @@
             <div class="grid grid-3">
                 <div class="card">
                     <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <i class="fas fa-book" style="font-size: 3rem; color: var(--primary);"></i>
+                        <i class="fas fa-book" style="font-size: 2.5rem; color: var(--primary);"></i>
                     </div>
                     <h3 style="text-align: center;">The Credibility Anchor</h3>
                     <p><strong>"The U.S. Immigration GuideBook by Maria"</strong> - Published on Amazon and other marketplaces, this instantly elevates the product's authority and counters skepticism of "sketchy PDFs."</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li>Globally recognized platform signals legitimacy</li>
                         <li>Content drawn from lived experience</li>
                         <li>Provides human-centered proof that resonates</li>
@@ -1039,11 +1217,11 @@
                 
                 <div class="card">
                     <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <i class="fas fa-podcast" style="font-size: 3rem; color: var(--primary);"></i>
+                        <i class="fas fa-podcast" style="font-size: 2.5rem; color: var(--primary);"></i>
                     </div>
                     <h3 style="text-align: center;">The Emotional Bridge</h3>
                     <p><strong>Exclusive Podcast Episode</strong> - Features "real voices, real stories, and deep analysis of the present immigration situation." Creates emotional connections and validates the audience's struggle.</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li>Builds rapport on a personal level</li>
                         <li>Transforms product from static resource to dynamic conversation</li>
                         <li>Creates sense of belonging and kinship</li>
@@ -1056,11 +1234,11 @@
                 
                 <div class="card">
                     <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <i class="fas fa-globe" style="font-size: 3rem; color: var(--primary);"></i>
+                        <i class="fas fa-globe" style="font-size: 2.5rem; color: var(--primary);"></i>
                     </div>
                     <h3 style="text-align: center;">The Dynamic Resource Hub</h3>
                     <p><strong>Custom Resource Website</strong> - Packed with information, data, and tools that address the need for ongoing support in an ever-changing legal landscape.</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <ul>
                         <li>Provides up-to-date USCIS processing times</li>
                         <li>Offers legal updates and policy changes</li>
                         <li>Positions bundle as long-term ally, not one-time purchase</li>
@@ -1131,10 +1309,10 @@
                     <h3>Problem: Fear of Deportation & ICE Raids</h3>
                     <p><strong>Desperation Score:</strong> 10/10 | <strong>Purchase Likelihood:</strong> 10/10</p>
                     <p><strong>What triggers it:</strong> Intensified enforcement rhetoric, misinformation campaigns, constant threat of family separation.</p>
-                    <p><strong>Estimated affected:</strong> Millions of undocumented immigrants and their families; 3.7M total immigration court cases, 850K deportation cases in FY2024.</p>
+                    <p><strong>Estimated affected:</strong> Millions of undocumented immigrants and their families; 3.7M total immigration court cases, 850K deportation cases in FY2025.</p>
                     
                     <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
-                    <ul style="margin-left: 20px;">
+                    <ul>
                         <li>Plain-language survival plan for ICE encounters</li>
                         <li>"Know Your Rights" guide and 1-page checklist</li>
                         <li>Family safety plan development guidance</li>
@@ -1153,10 +1331,10 @@
                     <h3>Problem: Visa Overstay Consequences</h3>
                     <p><strong>Desperation Score:</strong> 9/10 | <strong>Purchase Likelihood:</strong> 9/10</p>
                     <p><strong>What triggers it:</strong> Exceeding authorized stay, creating a "ticking clock" toward severe penalties including deportation and permanent ban.</p>
-                    <p><strong>Estimated affected:</strong> ~400,000 "Suspected In-Country Overstays" as of May 2024.</p>
+                    <p><strong>Estimated affected:</strong> ~400,000 "Suspected In-Country Overstays" as of May 2025.</p>
                     
                     <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
-                    <ul style="margin-left: 20px;">
+                    <ul>
                         <li>Guidance on "unlawful presence" and how it accrues</li>
                         <li>Potential pathways to adjust status</li>
                         <li>Option of voluntary departure to avoid formal deportation</li>
@@ -1178,7 +1356,7 @@
                     <p><strong>Estimated affected:</strong> Millions of applicants facing multi-year waits and complex documentation requirements.</p>
                     
                     <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
-                    <ul style="margin-left: 20px;">
+                    <ul>
                         <li>Step-by-step plan for accurate form completion</li>
                         <li>Guidance on compiling supporting documents</li>
                         <li>Strategies for responding to Requests for Evidence (RFEs)</li>
@@ -1200,7 +1378,7 @@
                     <p><strong>Estimated affected:</strong> 1.9+ million asylum seekers waiting for resolution, many facing years of uncertainty.</p>
                     
                     <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
-                    <ul style="margin-left: 20px;">
+                    <ul>
                         <li>Detailed guidance on preparing a robust asylum application (Form I-589)</li>
                         <li>Strategies to withstand scrutiny and meet the one-year filing deadline</li>
                         <li>Appeal process guidance for denied cases</li>
@@ -1222,7 +1400,7 @@
                     <p><strong>Estimated affected:</strong> 538,000 active DACA recipients needing timely renewals and navigating uncertainty.</p>
                     
                     <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
-                    <ul style="margin-left: 20px;">
+                    <ul>
                         <li>Clear instructions on how to submit timely DACA renewal applications</li>
                         <li>Emphasis on the recommended filing window to avoid lapses in status</li>
                         <li>Guidance on maintaining work authorization during processing</li>
@@ -1260,7 +1438,7 @@
                     <span class="city-marker">Atlanta, GA</span>
                 </div>
                 
-                <div style="margin-top: 2rem;">
+                <div style="margin-top: 2rem; overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
@@ -1330,7 +1508,7 @@
                 <p><strong>Targeting example:</strong> "Are you in a mixed-status family? We understand your fears about driving and going to work. This is your solution."</p>
                 
                 <h4 style="margin-top: 1.5rem;">Mixed-Status Family Worry Statistics:</h4>
-                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <ul>
                     <li>60% worry about participating in essential activities (vs. 29% of all immigrant families)</li>
                     <li>58% worry about deportation of a family member (vs. 32% of all immigrant families)</li>
                     <li>44% worry about driving a car (vs. 19% of all immigrant families)</li>
@@ -1582,48 +1760,67 @@
         });
         
         // Worry Chart
-        const worryCtx = document.getElementById('worryChart').getContext('2d');
-        const worryChart = new Chart(worryCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Driving a car', 'Going to work', 'Sending kids to school', 'Talking to police', 'Deportation worry'],
-                datasets: [
-                    {
-                        label: 'All Immigrant Families',
-                        data: [19, 16, 17, 20, 32],
-                        backgroundColor: 'rgba(37, 99, 235, 0.7)',
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 1
+        window.addEventListener('load', function() {
+            const worryCtx = document.getElementById('worryChart').getContext('2d');
+            const worryChart = new Chart(worryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Driving a car', 'Going to work', 'Sending kids to school', 'Talking to police', 'Deportation worry'],
+                    datasets: [
+                        {
+                            label: 'All Immigrant Families',
+                            data: [19, 16, 17, 20, 32],
+                            backgroundColor: 'rgba(37, 99, 235, 0.7)',
+                            borderColor: 'rgba(37, 99, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Mixed-Status Families',
+                            data: [44, 38, 32, 44, 58],
+                            backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                            borderColor: 'rgba(239, 68, 68, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage Who Worry'
+                            },
+                            max: 60,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
                     },
-                    {
-                        label: 'Mixed-Status Families',
-                        data: [44, 38, 32, 44, 58],
-                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
-                        borderColor: 'rgba(239, 68, 68, 1)',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
+                    plugins: {
                         title: {
                             display: true,
-                            text: 'Percentage Who Worry'
+                            text: 'Percentage of Immigrant Families Who Worry About Activities (2025)',
+                            font: {
+                                size: 16
+                            }
                         },
-                        max: 60
-                    }
-                },
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Percentage of Immigrant Families Who Worry About Activities (2024)'
+                        legend: {
+                            position: 'top',
+                        }
                     }
                 }
-            }
+            });
+            
+            // Make chart responsive
+            window.addEventListener('resize', function() {
+                worryChart.resize();
+            });
         });
     </script>
 </body>
-                        </html>
+    </html>
