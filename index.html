@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Immigration Navigator PRO - Ultimate Affiliate Resource</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10B981;
+            --accent: #F59E0B;
+            --danger: #EF4444;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --gray-light: #E5E7EB;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+        
+        .metric-box {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .badge-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .badge-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .badge-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .testimonial:before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        tr:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 25px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--gray-light);
+        }
+        
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-track {
+            background: var(--gray-light);
+            border-radius: 10px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .testimonial-card {
+            min-width: 350px;
+            flex: 0 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .video-card {
+            min-width: 320px;
+            flex: 0 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        
+        .video-card-content {
+            padding: 1.5rem;
+        }
+        
+        .image-card {
+            min-width: 280px;
+            flex: 0 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-card-content {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .angle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .angle-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .angle-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .proof-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .proof-icon {
+            margin-right: 1.5rem;
+            color: var(--primary);
+            font-size: 2rem;
+            min-width: 40px;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .market-segment {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .segment-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-right: 1.5rem;
+            min-width: 60px;
+        }
+        
+        .tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .city-marker {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .hook-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .hook-text {
+            font-style: italic;
+            color: var(--dark);
+        }
+        
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-item {
+            margin: 0 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .psychology-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .pain-point-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .pain-point-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .pain-point-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .pain-point-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .angle-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                margin: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .metric-value {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1 class="hero-title">US Immigration Navigator PRO: Your 81% Commission Opportunity in a $2.3 Billion "Fear Economy"</h1>
+            <p class="hero-subtitle">Tap into the desperate needs of 53.3 million immigrants facing deportation fears, bureaucratic nightmares, and legal uncertainty with a proven solution that converts at unprecedented rates.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="metric-box">
+                    <div class="metric-value">81%</div>
+                    <div class="metric-label">Commission Rate</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$47</div>
+                    <div class="metric-label">Customer Price</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$38.07</div>
+                    <div class="metric-label">Your Payout</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$599</div>
+                    <div class="metric-label">Perceived Value</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">What Our Affiliates Say</h2>
+            <p class="section-subtitle">Hear from top affiliates who have successfully promoted US Immigration Navigator PRO</p>
+            
+            <div class="scroll-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Congratulations, your is the first product of it's kind I have seen on JVZOO"</p>
+                    <p class="testimonial-author">Nirmal Sawlani</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"You don't have to be in the 'immigration niche' to promote this. The fear of rejection or losing their chance is a universal trigger"</p>
+                    <p class="testimonial-author">Pedro João da Silva</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"This is what Warriorplus offers should be like. High value, great commish, and targeting carefully converts like crazy"</p>
+                    <p class="testimonial-author">Alex Costa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Crisis Section -->
+    <section id="market">
+        <div class="container">
+            <h2 class="section-title">The Immigration Crisis: Your $2.3 Billion Opportunity</h2>
+            <p class="section-subtitle">The U.S. immigration landscape is a "fear economy" where millions live with constant anxiety about deportation, family separation, and bureaucratic chaos.</p>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3><i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 10px;"></i> The Fear Economy</h3>
+                    <p>Immigrants live in a state of "chronic fear, instability, and trauma" where routine activities become sources of anxiety:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>44% fear driving a car</li>
+                        <li>38% are scared to go to work</li>
+                        <li>32% worry about sending children to school</li>
+                        <li>58% of mixed-status families fear deportation</li>
+                    </ul>
+                    <p>This creates an "invisible wall" that prevents full participation in society and creates desperate need for solutions.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-chart-line" style="color: var(--secondary); margin-right: 10px;"></i> Market Size & Demand</h3>
+                    <p>With 53.3 million immigrants in the U.S., this is a massive underserved market:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>11.3 million pending USCIS cases (record high)</li>
+                        <li>1.9 million asylum cases backlogged</li>
+                        <li>538,000 active DACA recipients needing renewals</li>
+                        <li>400,000+ visa overstays seeking solutions</li>
+                    </ul>
+                    <p>ICE tracking sites received 6.1-7.1M visitors in June 2025 alone, showing desperate information seeking.</p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Immigrant Family Worries (2024 Data)</h3>
+                <canvas id="worryChart" height="350"></canvas>
+            </div>
+            
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-number">10/10</div>
+                    <div class="stat-label">Desperation Score (Deportation Fear)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">10/10</div>
+                    <div class="stat-label">Purchase Likelihood (Asylum Issues)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">9/10</div>
+                    <div class="stat-label">Desperation Score (Green Card Delays)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">9/10</div>
+                    <div class="stat-label">Purchase Likelihood (DACA Uncertainty)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychology Section -->
+    <section id="psychology" style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Understanding the Immigrant Psyche: Hope vs. Fear</h2>
+            <p class="section-subtitle">To effectively market to this audience, you must understand their complex psychological landscape.</p>
+            
+            <div class="grid grid-2">
+                <div class="psychology-card">
+                    <h3><i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 10px;"></i> The Perpetual Outsider</h3>
+                    <p>Many immigrants experience a "pervasive sense of not belonging coupled with imposter syndrome" that creates an "invisible barrier to seeking help." This feeling persists even for those with documents and secure jobs.</p>
+                    <p>They often feel "unwanted" in the country, a sentiment that can begin in childhood for those who grew up in the shadows of immigration enforcement.</p>
+                </div>
+                
+                <div class="psychology-card">
+                    <h3><i class="fas fa-balance-scale" style="color: var(--primary); margin-right: 10px;"></i> The Paradox of Hope vs. Fear</h3>
+                    <p>Immigrants live with a constant tension between:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Hope:</strong> Unshakable belief in a better future, desire to "feel whole," and faith in American meritocracy</li>
+                        <li><strong>Fear:</strong> Chronic anxiety about deportation, family separation, and bureaucratic uncertainty</li>
+                    </ul>
+                    <p>This creates what researchers call "chronic, layered trauma" that erodes emotional security.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 2rem;">The Core Psychological Pain Points & Solutions</h3>
+                <table class="pain-point-table">
+                    <thead>
+                        <tr>
+                            <th>Pain Point</th>
+                            <th>Psychological Trigger</th>
+                            <th>Product Solution</th>
+                            <th>Resulting Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bureaucratic Labyrinth</td>
+                            <td>Crushing sense of helplessness due to indefinite delays</td>
+                            <td>Simplifies complex forms with guided "smooth process"</td>
+                            <td>Reclaimed sense of control, reduced anxiety</td>
+                        </tr>
+                        <tr>
+                            <td>Scam Ecosystem</td>
+                            <td>Profound trust deficit and fear of bad information</td>
+                            <td>"No More Notario" pledge and explicit transparency</td>
+                            <td>Peace of mind and assurance of legitimate partnership</td>
+                        </tr>
+                        <tr>
+                            <td>Pervasive Anxiety & Trauma</td>
+                            <td>Chronic fear of deportation and family separation</td>
+                            <td>Clear guided path to urgent stability and permanent status</td>
+                            <td>A "lifeline" to a new life, counter to fear of being "unwanted"</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Divide</td>
+                            <td>Inaccessibility of flawed government apps like CBP One</td>
+                            <td>Accessible, reliable alternative that doesn't require tech-savviness</td>
+                            <td>Equal access to information, end to being "shut out"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 2rem;">The "Imposter Syndrome of Gratitude"</h3>
+                <p>Immigrants often experience internal conflict between expected gratitude for opportunities and their actual feelings of not belonging or depression. When they feel depressed or lost, their emotions may be dismissed with the assertion that such feelings are impossible "in a country that offers so much opportunity."</p>
+                <p>This creates a major barrier to seeking help. Effective marketing must validate this internal struggle without triggering guilt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Angles Section -->
+    <section id="angles">
+        <div class="container">
+            <h2 class="section-title">15 Research-Backed Marketing Angles That Convert</h2>
+            <p class="section-subtitle">These angles tap directly into the emotional triggers and pain points of the immigrant audience.</p>
+            
+            <div class="angle-grid">
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">1</span> The "Reclaim Your Dignity" Angle</h3>
+                    <p>Position the product as a tool to move from "unlawful presence" to control, dignity, and opportunity. Speaks to the latent intent to abolish uncertainty and find permanence.</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"From perpetual outsider to permanent resident: Reclaim your dignity and secure your future"</p>
+                    </div>
+                </div>
+                
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">2</span> The "Stop the Clock" Angle</h3>
+                    <p>Leverage time-sensitive urgency created by increasing processing times (I-130 petitions take 35 months) and rising fees. Frame the product as vital to prevent administrative errors from having catastrophic consequences.</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"The one form mistake that causes 30% of denials... and how to avoid it"</p>
+                    </div>
+                </div>
+                
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">3</span> The "Invisible Wall" Angle</h3>
+                    <p>Address the profound fear that prevents immigrants from fully participating in society. Use data showing daily anxieties of driving (44%), going to work (38%), and sending children to school (32%).</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"Are you living behind an 'invisible wall' of fear? Here's how to tear it down"</p>
+                    </div>
+                </div>
+                
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">4</span> The "Hope is the Counter to Fear" Angle</h3>
+                    <p>Use the audience's own mantra to frame the product as the embodiment of their unshakable hope for a better future. Creates powerful emotional connection by speaking their language of defiance and resilience.</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"Hope is the Counter to Fear: Your pathway from anxiety to stability"</p>
+                    </div>
+                </div>
+                
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">5</span> The "Avoid the Deportation Trap" Angle</h3>
+                    <p>Directly handle the deepest fear of the scam ecosystem. Position the product as the safe, secure partner that helps navigate the system without falling victim to fraudulent advice.</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"The truth about notario scams and how to avoid them"</p>
+                    </div>
+                </div>
+                
+                <div class="angle-card">
+                    <h3><span class="badge badge-primary">6</span> The "Don't Be a Statistic" Angle</h3>
+                    <p>Use data from the "Worries of Immigrant Families" table to show the audience they're not alone in their fears, then frame the product as a solution to move from being a worried statistic to a success story.</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"58% of mixed-status families worry about deportation daily. Here's how to be in the 42% who sleep peacefully"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Bundle Section -->
+    <section id="bundle" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="container">
+            <h2 class="section-title">The Complete US Immigration Navigator PRO Bundle</h2>
+            <p class="section-subtitle">A multi-faceted program designed to address both emotional and pragmatic needs of immigrants.</p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-book" style="font-size: 3rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center;">The Credibility Anchor</h3>
+                    <p><strong>"The U.S. Immigration GuideBook by Maria"</strong> - Published on Amazon and other marketplaces, this instantly elevates the product's authority and counters skepticism of "sketchy PDFs."</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Globally recognized platform signals legitimacy</li>
+                        <li>Content drawn from lived experience</li>
+                        <li>Provides human-centered proof that resonates</li>
+                    </ul>
+                    <div class="hook-card">
+                        <p class="hook-text">"This isn't a sketchy PDF. It's a published book with global reach"</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-podcast" style="font-size: 3rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center;">The Emotional Bridge</h3>
+                    <p><strong>Exclusive Podcast Episode</strong> - Features "real voices, real stories, and deep analysis of the present immigration situation." Creates emotional connections and validates the audience's struggle.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Builds rapport on a personal level</li>
+                        <li>Transforms product from static resource to dynamic conversation</li>
+                        <li>Creates sense of belonging and kinship</li>
+                    </ul>
+                    <div class="hook-card">
+                        <p class="hook-text">"Real voices, real stories, and a deep analysis of the present immigration situation"</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-globe" style="font-size: 3rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center;">The Dynamic Resource Hub</h3>
+                    <p><strong>Custom Resource Website</strong> - Packed with information, data, and tools that address the need for ongoing support in an ever-changing legal landscape.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>Provides up-to-date USCIS processing times</li>
+                        <li>Offers legal updates and policy changes</li>
+                        <li>Positions bundle as long-term ally, not one-time purchase</li>
+                    </ul>
+                    <div class="hook-card">
+                        <p class="hook-text">"A complete program, not just another download. Packed with information, data, and tools"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 2rem;">What Makes This Bundle Different</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <div class="proof-item">
+                            <div class="proof-icon"><i class="fas fa-shield-check"></i></div>
+                            <div>
+                                <h4>No More Notario Pledge</h4>
+                                <p>Explicit promise that the service is not a scam, forms are free, and it's not run by a notario.</p>
+                            </div>
+                        </div>
+                        <div class="proof-item">
+                            <div class="proof-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Addresses Bureaucratic Delays</h4>
+                                <p>Provides strategies for navigating indefinite processing times and complex paperwork.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="proof-item">
+                            <div class="proof-icon"><i class="fas fa-heart"></i></div>
+                            <div>
+                                <h4>Human-Centered Approach</h4>
+                                <p>Recognizes the emotional trauma and provides psychological support alongside legal guidance.</p>
+                            </div>
+                        </div>
+                        <div class="proof-item">
+                            <div class="proof-icon"><i class="fas fa-lock"></i></div>
+                            <div>
+                                <h4>Data Security & Privacy</h4>
+                                <p>Frames the product as a "safety bubble" for those fearing exposure of their status.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem-Solution Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Top 10 Immigration Problems & How The Bundle Solves Them</h2>
+            <p class="section-subtitle">These are the most desperate problems facing immigrants, with extremely high desperation and purchase likelihood scores.</p>
+            
+            <div class="tab-container">
+                <div class="tab active" data-tab="problem1">Fear of Deportation</div>
+                <div class="tab" data-tab="problem2">Visa Overstay</div>
+                <div class="tab" data-tab="problem3">Green Card Delays</div>
+                <div class="tab" data-tab="problem4">Asylum Backlogs</div>
+                <div class="tab" data-tab="problem5">DACA Uncertainty</div>
+            </div>
+            
+            <div class="tab-content active" id="problem1">
+                <div class="card">
+                    <h3>Problem: Fear of Deportation & ICE Raids</h3>
+                    <p><strong>Desperation Score:</strong> 10/10 | <strong>Purchase Likelihood:</strong> 10/10</p>
+                    <p><strong>What triggers it:</strong> Intensified enforcement rhetoric, misinformation campaigns, constant threat of family separation.</p>
+                    <p><strong>Estimated affected:</strong> Millions of undocumented immigrants and their families; 3.7M total immigration court cases, 850K deportation cases in FY2024.</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Plain-language survival plan for ICE encounters</li>
+                        <li>"Know Your Rights" guide and 1-page checklist</li>
+                        <li>Family safety plan development guidance</li>
+                        <li>Understanding voluntary departure vs. formal removal</li>
+                    </ul>
+                    
+                    <div class="hook-card" style="margin-top: 1.5rem;">
+                        <p class="hook-text">"Protect your family from deportation. Act now before it's too late."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="problem2">
+                <div class="card">
+                    <h3>Problem: Visa Overstay Consequences</h3>
+                    <p><strong>Desperation Score:</strong> 9/10 | <strong>Purchase Likelihood:</strong> 9/10</p>
+                    <p><strong>What triggers it:</strong> Exceeding authorized stay, creating a "ticking clock" toward severe penalties including deportation and permanent ban.</p>
+                    <p><strong>Estimated affected:</strong> ~400,000 "Suspected In-Country Overstays" as of May 2024.</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">How the Bundle Solves This:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Guidance on "unlawful presence" and how it accrues</li>
+                        <li>Potential pathways to adjust status</li>
+                        <li>Option of voluntary departure to avoid formal deportation</li>
+                        <li>Information on seeking waivers for re-entry bars</li>
+                    </ul>
+                    
+                    <div class="hook-card" style="margin-top: 1.5rem;">
+                        <p class="hook-text">"Escape the shadows. Secure your right to stay. Act now before it's too late."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geo-Targeting Section -->
+    <section id="targeting" style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Geo-Targeting Blueprint: Mapping Unrest to Opportunity</h2>
+            <p class="section-subtitle">These locations are epicenters of immigration-related unrest where fear is highest and need for solutions is most profound.</p>
+            
+            <div class="map-container">
+                <h3 style="text-align: center; margin-bottom: 2rem;">US Immigration Hotspots - High Urgency Areas</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                    <span class="city-marker">Los Angeles, CA</span>
+                    <span class="city-marker">San Francisco Bay Area, CA</span>
+                    <span class="city-marker">Austin, TX</span>
+                    <span class="city-marker">Dallas, TX</span>
+                    <span class="city-marker">Houston, TX</span>
+                    <span class="city-marker">San Antonio, TX</span>
+                    <span class="city-marker">Seattle, WA</span>
+                    <span class="city-marker">Chicago, IL</span>
+                    <span class="city-marker">New York City, NY</span>
+                    <span class="city-marker">Philadelphia, PA</span>
+                    <span class="city-marker">Atlanta, GA</span>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City/Area</th>
+                                <th>Key Events</th>
+                                <th>Marketing Opportunity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Los Angeles, CA</td>
+                                <td>Downtown curfew, deployment of 4,000 National Guard troops, repeated clashes after ICE raids</td>
+                                <td>High-urgency messaging; target with local keywords like "L.A. immigration help"</td>
+                            </tr>
+                            <tr>
+                                <td>Texas Urban Centers</td>
+                                <td>Statewide deployment of 5,000 National Guard members, over 60 planned protests, arrests</td>
+                                <td>Leverage sense of broad-scale mobilization; position as state-wide solution</td>
+                            </tr>
+                            <tr>
+                                <td>Chicago, IL</td>
+                                <td>Thousands marched, blocking major roads, sustained daily actions near immigration courts</td>
+                                <td>Emphasize product as consistent guide for audience engaged in ongoing struggles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Targeting Mixed-Status Families</h3>
+                <p>Data shows that anxieties about driving, going to work, and family deportation are disproportionately higher in mixed-status households. This indicates a more intense, fear-based motivation for seeking solutions.</p>
+                <p><strong>Targeting example:</strong> "Are you in a mixed-status family? We understand your fears about driving and going to work. This is your solution."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="container">
+            <h2 class="section-title">Complete Affiliate Resource Arsenal</h2>
+            <p class="section-subtitle">Everything you need to create high-converting campaigns from day one.</p>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3><i class="fas fa-bullhorn" style="color: var(--accent); margin-right: 10px;"></i> 20 Ready-to-Use Marketing Hooks</h3>
+                    <p>Derived directly from the audience's language DNA and emotional triggers:</p>
+                    <div class="hook-card">
+                        <p class="hook-text">"Stop waiting. Start living. Reclaim your future."</p>
+                    </div>
+                    <div class="hook-card">
+                        <p class="hook-text">"Your journey to stability begins now."</p>
+                    </div>
+                    <div class="hook-card">
+                        <p class="hook-text">"The one form mistake that causes 30% of denials... and how to avoid it."</p>
+                    </div>
+                    <div class="hook-card">
+                        <p class="hook-text">"Hope is the Counter to Fear."</p>
+                    </div>
+                    <div class="hook-card">
+                        <p class="hook-text">"Are you a Perpetual Outsider in your own home?"</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-film" style="color: var(--accent); margin-right: 10px;"></i> Video Resources</h3>
+                    <p>Powerful videos that help you understand the immigrant experience:</p>
+                    <div class="scroll-container">
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/8bEK6gytwec" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>Global Refugees Share Views</h4>
+                                <p>Hear from refugees around the world</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/y8MH0L-GJkE" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>Family Reunion Asylum</h4>
+                                <p>Stories of family reunification</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/Yb34ge_eZig" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>Reuniting With Mother</h4>
+                                <p>Emotional reunification stories</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/Aioo9fvPhKc" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>Father Reunites With Family</h4>
+                                <p>Mexican family reunification</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/4nXtq_03dqk" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>DACA: Story of a Sister</h4>
+                                <p>Personal DACA experiences</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/I6qkFNOVebo" frameborder="0" allowfullscreen></iframe>
+                            <div class="video-card-content">
+                                <h4>TED-Ed Immigration Story</h4>
+                                <p>Educational perspective on immigration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Images for Inspiration</h3>
+                <p style="text-align: center; margin-bottom: 1.5rem;">Ask affiliates to use similar images of families reuniting in their marketing materials</p>
+                <div class="scroll-container">
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/5h9TsmkY/Screenshot-20250904-135014-Perplexity.jpg" alt="Family Reunion Inspiration">
+                        <div class="image-card-content">
+                            <h4>Family Reunion</h4>
+                            <p>Emotional family reunification moment</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/8t8wn4n/Screenshot-20250904-134805-Perplexity.jpg" alt="Immigration Success">
+                        <div class="image-card-content">
+                            <h4>Immigration Success</h4>
+                            <p>Celebrating immigration milestones</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/B2GpMdZk/Screenshot-20250904-134746-Perplexity.jpg" alt="Document Approval">
+                        <div class="image-card-content">
+                            <h4>Document Approval</h4>
+                            <p>Celebrating legal status approval</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/7dVmFnwd/1756066602745.jpg" alt="Family Togetherness">
+                        <div class="image-card-content">
+                            <h4>Family Togetherness</h4>
+                            <p>The joy of family staying together</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/B2JM86kL/1751984359322.jpg" alt="Immigration Journey">
+                        <div class="image-card-content">
+                            <h4>Immigration Journey</h4>
+                            <p>The path to a new life</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/CpK6ZwKD/20250628-104230.jpg" alt="Celebration Moment">
+                        <div class="image-card-content">
+                            <h4>Celebration Moment</h4>
+                            <p>Celebrating immigration success</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/RpSFMVmx/20250702-192019.jpg" alt="New Beginnings">
+                        <div class="image-card-content">
+                            <h4>New Beginnings</h4>
+                            <p>Starting fresh in a new country</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/jvZcrsvw/Imageguide.jpg" alt="Guide to Success">
+                        <div class="image-card-content">
+                            <h4>Guide to Success</h4>
+                            <p>Navigation through complex processes</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.ibb.co/GQM09dRJ/1753683165672.jpg" alt="Hope and Future">
+                        <div class="image-card-content">
+                            <h4>Hope and Future</h4>
+                            <p>Building a better future</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Lead Magnet Recommendation</h3>
+                <p style="text-align: center;">Provide this free preview as a lead magnet to increase conversions:</p>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="https://drive.google.com/uc?export=download&id=1Zr_ZKIfgc_j7vgGZ_SloxGSFDu-I-WnO" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Free Preview
+                    </a>
+                </div>
+                <p style="text-align: center;">This preview gives potential customers a taste of the valuable content in the full guide, increasing conversion rates.</p>
+            </div>
+            
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Channel Strategy Guide</h3>
+                <div class="grid grid-3">
+                    <div>
+                        <h4><i class="fab fa-reddit" style="color: #ff4500; margin-right: 10px;"></i> Community Hubs (Reddit)</h4>
+                        <p>Authentic engagement on subreddits like r/immigration or r/expats is critical for building rapport. Provide genuine value by answering questions and participating in discussions without overt selling.</p>
+                    </div>
+                    <div>
+                        <h4><i class="fab fa-youtube" style="color: #ff0000; margin-right: 10px;"></i> Visual Storytellers (YouTube & TikTok)</h4>
+                        <p>These platforms are used by immigrants to document "our journey" and provide informational tutorials. Partner with creators who tell stories of resilience and hope.</p>
+                    </div>
+                    <div>
+                        <h4><i class="fas fa-hands-helping" style="color: var(--primary); margin-right: 10px;"></i> Professional Gatekeepers</h4>
+                        <p>The audience relies on legal aid organizations and non-profits. Position the product as a supportive tool for these groups or as a reliable, low-cost alternative.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+        
+        // Worry Chart
+        const worryCtx = document.getElementById('worryChart').getContext('2d');
+        const worryChart = new Chart(worryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Driving a car', 'Going to work', 'Sending kids to school', 'Talking to police', 'Deportation worry'],
+                datasets: [
+                    {
+                        label: 'All Immigrant Families',
+                        data: [19, 16, 17, 20, 32],
+                        backgroundColor: 'rgba(37, 99, 235, 0.7)',
+                        borderColor: 'rgba(37, 99, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Mixed-Status Families',
+                        data: [44, 38, 32, 44, 58],
+                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage Who Worry'
+                        },
+                        max: 60
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Percentage of Immigrant Families Who Worry About Activities (2024)'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
